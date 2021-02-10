@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Quiz
+from api.models import Quiz
 
 
 class QuizSerializer(serializers.ModelSerializer):
