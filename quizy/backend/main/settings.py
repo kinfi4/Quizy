@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'smartpoll',
+        'NAME': 'quizy',
         'USER': 'postgres',
         'PASSWORD': PASS,
         'HOST': '127.0.0.1',
