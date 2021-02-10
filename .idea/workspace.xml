@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="976b99a0-9c8d-4ae1-88b2-50eeb86ddada" name="Default Changelist" comment="" />
+    <list default="true" id="976b99a0-9c8d-4ae1-88b2-50eeb86ddada" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/quizy/.idea/quizy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quizy/backend/api/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quizy/backend/api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quizy/backend/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quizy/backend/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SmartPoll.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Quizy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.idea/smart_poll.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/api/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/api/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/api/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/api/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/api/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/main/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/main/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/main/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/main/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/main/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/main/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/main/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_poll/backend/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/quizy/backend/manage.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +61,7 @@
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="SmartPoll" />
+      <module name="Quizy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>

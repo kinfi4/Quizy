@@ -1,4 +1,5 @@
 from pathlib import Path
+from secret import PASS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig'
+    'api.apps.ApiConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -66,7 +68,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'smartpoll',
         'USER': 'postgres',
-        'PASSWORD': '1415926535',
+        'PASSWORD': PASS,
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
