@@ -22,3 +22,11 @@ class UserQuizzesView(generics.ListAPIView):
         user_id = self.request.parser_context['kwargs'].get('pk')
         return Quiz.objects.filter(creator__id=user_id)
 
+
+class QuizzesByTag(generics.ListAPIView):
+    serializer_class = QuizSerializer
+
+    def get_queryset(self):
+        tag_names = self.request.query_params.get('tn')
+        tag_names = ['#' + tn for tn in tag_names.split('%')]
+        return Quiz.objects.filter(tags__tag_body__in=tag_names)

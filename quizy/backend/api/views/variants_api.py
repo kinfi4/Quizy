@@ -3,7 +3,7 @@ from api.serializers.variant_serializer import VariantSerializer
 from api.models import AnswerVariant
 
 
-class VariantsForQuestionView(generics.ListAPIView):
+class QuestionVariantsView(generics.ListAPIView):
     serializer_class = VariantSerializer
 
     def get_queryset(self):
