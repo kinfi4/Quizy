@@ -12,7 +12,7 @@ class QuizListView(generics.ListAPIView):
     serializer_class = QuizSerializer
 
     def get_queryset(self):
-        return Quiz.objects.all()
+        return Quiz.objects.filter(is_private=False)
 
 
 class UserQuizzesView(generics.ListAPIView):
