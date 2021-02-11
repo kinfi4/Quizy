@@ -3,7 +3,7 @@ from api.serializers.question_serializer import QuestionSerializer
 from api.models import Question
 
 
-class QuestionsForQuiz(generics.ListAPIView):
+class QuestionsForQuizView(generics.ListAPIView):
     serializer_class = QuestionSerializer
 
     def get_queryset(self):

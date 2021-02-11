@@ -1,7 +1,7 @@
 from rest_framework import generics
 from api.serializers.quiz_serializer import QuizSerializer
 
-from api.models import Quiz, User
+from api.models import Quiz
 
 
 class QuizCreateView(generics.CreateAPIView):
@@ -15,7 +15,7 @@ class QuizListView(generics.ListAPIView):
         return Quiz.objects.all()
 
 
-class UserQuizzes(generics.ListAPIView):
+class UserQuizzesView(generics.ListAPIView):
     serializer_class = QuizSerializer
 
     def get_queryset(self):
