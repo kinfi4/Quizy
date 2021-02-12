@@ -1,4 +1,5 @@
 from rest_framework import generics
+from django.shortcuts import get_object_or_404
 from api.serializers.quiz_serializer import QuizSerializer
 
 from api.models import Quiz
@@ -30,3 +31,11 @@ class QuizzesByTag(generics.ListAPIView):
         tag_names = self.request.query_params.get('tn')
         tag_names = ['#' + tn for tn in tag_names.split('%')]
         return Quiz.objects.filter(tags__tag_body__in=tag_names)
+
+
+class QuizByIdView(generics.RetrieveAPIView):
+    serializer_class = QuizSerializer
+
+    def get_object(self):
+        quiz_id = int(self.request.parser_context['kwargs'].get('pk'))
+        return get_object_or_404(Quiz, id=quiz_id)
