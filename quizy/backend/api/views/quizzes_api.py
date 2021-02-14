@@ -50,7 +50,7 @@ class UpdateQuizView(generics.UpdateAPIView):
 
 class CreateQuizView(APIView):
     def post(self, request: HttpRequest):
-        quiz = QuizSerializer(request.data)
+        quiz = QuizSerializer(data=request.data)
 
         if quiz.is_valid():
             quiz.save()

@@ -8,6 +8,7 @@ from api.views.tags_api import TagsView
 
 urlpatterns = [
     path('quizzes', QuizListView.as_view()),
+    path('quizzes/create', CreateQuizView.as_view()),
     path('quizzes/<int:pk>', QuizByIdView.as_view()),
     path('quizzes/<int:pk>/update', UpdateQuizView.as_view()),
     path('quizzes/user/<int:pk>', UserQuizzesView.as_view()),
