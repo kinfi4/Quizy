@@ -39,3 +39,17 @@ class QuizByIdView(generics.RetrieveAPIView):
     def get_object(self):
         quiz_id = int(self.request.parser_context['kwargs'].get('pk'))
         return get_object_or_404(Quiz, id=quiz_id)
+
+
+class UpdateQuizView(generics.UpdateAPIView):
+    serializer_class = QuizSerializer
+
+    def get_queryset(self):
+        return Quiz.objects.all()
+
+
+class CreateQuizView(generics.CreateAPIView):
+    serializer_class = QuizSerializer
+
+    def get_queryset(self):
+        return Quiz.objects.all()
