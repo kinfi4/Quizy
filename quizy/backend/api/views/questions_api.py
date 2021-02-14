@@ -1,5 +1,5 @@
 from rest_framework import generics
-from api.serializers.question_serializer import QuestionSerializer
+from api.serializers.serializers import QuestionSerializer
 from api.models import Question
 
 

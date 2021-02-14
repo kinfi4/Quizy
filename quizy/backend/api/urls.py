@@ -1,6 +1,6 @@
 from django.urls import path
-from api.views.quizzes_api import QuizCreateView, QuizListView, UserQuizzesView, QuizzesByTag, QuizByIdView, \
-    UpdateQuizView
+from api.views.quizzes_api import QuizListView, UserQuizzesView, QuizzesByTag, QuizByIdView, \
+    UpdateQuizView, CreateQuizView
 from api.views.questions_api import QuizQuestionsView
 from api.views.variants_api import QuestionVariantsView
 from api.views.users_api import UsersView
@@ -18,4 +18,3 @@ urlpatterns = [
     path('users', UsersView.as_view()),
     path('tags', TagsView.as_view()),
 ]
-

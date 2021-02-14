@@ -1,5 +1,5 @@
 from rest_framework import generics
-from api.serializers.variant_serializer import VariantSerializer
+from api.serializers.serializers import VariantSerializer
 from api.models import AnswerVariant
 
 

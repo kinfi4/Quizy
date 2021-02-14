@@ -1,12 +1,12 @@
 from rest_framework import generics
+from django.http.request import HttpRequest
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
-from api.serializers.quiz_serializer import QuizSerializer
+from api.serializers.serializers import QuizSerializer
 
 from api.models import Quiz
-
-
-class QuizCreateView(generics.CreateAPIView):
-    serializer_class = QuizSerializer
 
 
 class QuizListView(generics.ListAPIView):
@@ -48,8 +48,11 @@ class UpdateQuizView(generics.UpdateAPIView):
         return Quiz.objects.all()
 
 
-class CreateQuizView(generics.CreateAPIView):
-    serializer_class = QuizSerializer
+class CreateQuizView(APIView):
+    def post(self, request: HttpRequest):
+        quiz = QuizSerializer(request.data)
 
-    def get_queryset(self):
-        return Quiz.objects.all()
+        if quiz.is_valid():
+            quiz.save()
+
+        return Response(status=201)

@@ -18,10 +18,10 @@ class Quiz(models.Model):
 
 class Question(models.Model):
     question = models.CharField(max_length=1024)
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions')
 
 
 class AnswerVariant(models.Model):
     body = models.CharField(max_length=248)
     is_correct = models.BooleanField(default=False)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='variants')
