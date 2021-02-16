@@ -4,7 +4,7 @@ from django.http.request import HttpRequest
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
-from api.serializers.serializers import QuizSerializer
+from api.serializers.serializers import QuizSerializer, QuizCreateSerializer
 
 from api.models import Quiz
 
@@ -50,9 +50,10 @@ class UpdateQuizView(generics.UpdateAPIView):
 
 class CreateQuizView(APIView):
     def post(self, request: HttpRequest):
-        quiz = QuizSerializer(data=request.data)
+        print(request.data)
+        quiz = QuizCreateSerializer(data=request.data)
 
-        if quiz.is_valid():
-            quiz.save()
+        if quiz.is_valid(raise_exception=True):
+            print(quiz.save())
 
         return Response(status=201)
