@@ -42,6 +42,7 @@ class QuizSerializer(serializers.ModelSerializer):
 class QuizCreateSerializer(serializers.Serializer):
     is_private = serializers.BooleanField(default=False)
     title = serializers.CharField(max_length=128, required=True)
+    description = serializers.CharField(max_length=512, required=False)
     creator_username = serializers.CharField(max_length=512)
     tags = serializers.ListField()
     questions = QuestionSerializer(many=True, required=True)

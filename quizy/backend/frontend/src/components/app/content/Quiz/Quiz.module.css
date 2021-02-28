@@ -1,0 +1,14 @@
+.quiz{
+    /* background-color: bisque; */
+    margin-bottom: 30px;
+}
+
+.caption{
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.username{
+    color: rgb(104, 104, 104);
+}
+

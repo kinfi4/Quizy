@@ -1,0 +1,27 @@
+.nav_block{
+    position: absolute;
+    top: 14px;
+    right: 10%;
+}
+
+.sing_in_btn, .create_quiz_btn {
+    margin-left: 10px;
+}
+
+.sing_in_btn{
+    padding: 10px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, rgb(172, 51, 51), rgb(255, 0, 0));
+    border: none;
+    font-size: large;
+}
+
+.create_quiz_btn{
+    padding: 10px 20px;
+    color: #bf1515;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, rgb(217, 217, 217), rgb(255, 255, 255));
+    border: none;
+    font-size: large;
+}

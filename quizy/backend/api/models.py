@@ -17,6 +17,7 @@ class Quiz(models.Model):
     title = models.CharField(max_length=128, null=False)
     creator = models.ForeignKey(User, on_delete=models.CASCADE, db_index=True, null=True)
     tags = models.ManyToManyField(Tag, db_index=True, blank=True)
+    description = models.CharField(max_length=512, null=True, blank=True)
 
     def __repr__(self):
         return f'Quiz {self.title}'
