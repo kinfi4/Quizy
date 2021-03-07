@@ -1,3 +1,5 @@
+from abc import ABC
+
 from rest_framework import serializers
 from api.models import Question, Quiz, Tag, User, AnswerVariant
 from api.database.generate_unique_code import generate_unique_code
@@ -29,7 +31,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         fields = ('variants', 'question')
 
 
-class QuizSerializer(serializers.ModelSerializer):
+class QuizGetSerializer(serializers.ModelSerializer):
     questions = QuestionSerializer(many=True, read_only=True)
     tags = TagSerializer(many=True, read_only=True, required=False)
     creator = UserSerializer()
@@ -95,6 +97,45 @@ class QuizCreateSerializer(serializers.Serializer):
             questions.append(question)
 
         return questions
+
+
+class QuizUpdateSerializer(serializers.Serializer):
+    title = serializers.CharField(max_length=128, required=False, write_only=True)
+    description = serializers.CharField(max_length=512, required=False, write_only=True)
+    tags = serializers.ListField(required=False, write_only=True)
+    questions = QuestionSerializer(many=True, required=False, write_only=True)
+
+    def update(self, instance, validated_data: dict):
+        for tag in validated_data.get('tags', []):
+            Tag.objects.get_or_create(tag_body=tag)
+
+        instance.tags.set(validated_data.pop('tags', []))
+        instance.__dict__.update(validated_data)
+        instance.save()
+
+        return instance
+
+    def create(self, validated_data):
+        pass
+
+
+
+
+
+
+
+
+
+
+
+#
+# {
+#    "title": "Again new title",
+#    "description": "And some description here",
+#    "tags": ["new tag!"]
+# }
+
+
 
 # {
 #         "questions": [

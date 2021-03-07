@@ -13,9 +13,8 @@ class Tag(models.Model):
 class Quiz(models.Model):
     is_private = models.BooleanField(default=False)
     code = models.CharField(max_length=8, db_index=True, unique=True)
-
     title = models.CharField(max_length=128, null=False)
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, db_index=True, null=True)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, db_index=True, null=True, related_name='quizzes')
     tags = models.ManyToManyField(Tag, db_index=True, blank=True)
     description = models.CharField(max_length=512, null=True, blank=True)
 

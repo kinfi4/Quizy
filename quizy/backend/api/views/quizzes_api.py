@@ -4,28 +4,28 @@ from django.http.request import HttpRequest
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
-from api.serializers.serializers import QuizSerializer, QuizCreateSerializer
+from api.serializers.serializers import QuizGetSerializer, QuizCreateSerializer, QuizUpdateSerializer
 
 from api.models import Quiz
 
 
 class QuizListView(generics.ListAPIView):
-    serializer_class = QuizSerializer
+    serializer_class = QuizGetSerializer
 
     def get_queryset(self):
         return Quiz.objects.filter(is_private=False)
 
 
 class UserQuizzesView(generics.ListAPIView):
-    serializer_class = QuizSerializer
+    serializer_class = QuizGetSerializer
 
     def get_queryset(self):
-        user_id = self.request.parser_context['kwargs'].get('pk')
-        return Quiz.objects.filter(creator__id=user_id)
+        username = self.request.parser_context['kwargs'].get('username')
+        return Quiz.objects.select_related('creator').filter(creator__username=username)
 
 
 class QuizzesByTag(generics.ListAPIView):
-    serializer_class = QuizSerializer
+    serializer_class = QuizGetSerializer
 
     def get_queryset(self):
         tag_names = self.request.query_params.get('tn')
@@ -34,7 +34,7 @@ class QuizzesByTag(generics.ListAPIView):
 
 
 class QuizByIdView(generics.RetrieveAPIView):
-    serializer_class = QuizSerializer
+    serializer_class = QuizGetSerializer
 
     def get_object(self):
         quiz_id = int(self.request.parser_context['kwargs'].get('pk'))
@@ -42,7 +42,7 @@ class QuizByIdView(generics.RetrieveAPIView):
 
 
 class UpdateQuizView(generics.UpdateAPIView):
-    serializer_class = QuizSerializer
+    serializer_class = QuizUpdateSerializer
 
     def get_queryset(self):
         return Quiz.objects.all()
@@ -50,7 +50,6 @@ class UpdateQuizView(generics.UpdateAPIView):
 
 class CreateQuizView(APIView):
     def post(self, request: HttpRequest):
-        print(request.data)
         quiz = QuizCreateSerializer(data=request.data)
 
         if quiz.is_valid(raise_exception=True):

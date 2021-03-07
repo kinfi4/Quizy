@@ -11,7 +11,7 @@ urlpatterns = [
     path('quizzes/create', CreateQuizView.as_view()),
     path('quizzes/<int:pk>', QuizByIdView.as_view()),
     path('quizzes/<int:pk>/update', UpdateQuizView.as_view()),
-    path('quizzes/user/<int:pk>', UserQuizzesView.as_view()),
+    path('quizzes/user/<str:username>', UserQuizzesView.as_view()),
     path('quizzes/tag/<str:tn>', QuizzesByTag.as_view()),
     path('quizzes/tag', QuizzesByTag.as_view()),
     path('questions/quiz/<int:pk>', QuizQuestionsView.as_view()),
